@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "novelscript",
+	"patterns": [
+		{
+			"include": "#expressions"
+		}
+	],
+	"repository": {
+		"expressions": {
+			"patterns": [{
+				"name": "keyword.control.novelscript",
+				"match": "\\b(if|end)\\b"
+			}, {
+				"match": "\\s*(.*)(:)\\s*(.*)",
+				"captures": {
+					"1":  { "name": "entity.name.type.novelscript" },
+					"2":  { "name": "punctuation.seperator.novelscript" },
+					"3":  { "name": "string.novelscript" }
+				}
+			}, { 
+				"include": "#operators" 
+			}, {
+				"name": "constant.numeric.novelscript",
+				"match": "\\d"
+			}, { "include": "#choices" }]
+		},
+		"operators": {
+			"match": "(=|!=|>|>=|<|<=)",
+			"name": "keyword.operator.comparison.novelscript"
+		},
+		"choices": {
+			"begin": "\\s*\\[",
+			"end": "\\s*\\]",
+			"beginCaptures": {
+			  "0": { "name": "punctuation.choice.start.novelscript" }
+			},
+			"endCaptures": {
+			  "0": { "name": "punctuation.choice.end.novelscript" }
+			},
+			"name": "expression.group",
+			"patterns": [{
+				"name": "punctuation.seperator.novelscript",
+				"match": "\\s*\\/\\s*"
+			},{ 
+				"include": "#choice"
+			}]
+		},
+		"choice": {
+			"name": "string.novelscript",
+			"match": "\\b[^\\/]*\\b"
+		}
+	},
+	"scopeName": "source.novelscript"
+}

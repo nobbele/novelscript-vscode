@@ -1,0 +1,36 @@
+{
+    "name": "novelscript-vscode",
+    "publisher": "nobbele",
+    "displayName": "Novelscript Syntax Highlighting",
+    "description": "Novelscript support for Visual Studio Code",
+    "icon": "icon.png",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "novelscript",
+            "aliases": ["novelscript", "novelscript"],
+            "extensions": [".ns"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "novelscript",
+            "scopeName": "source.novelscript",
+            "path": "./syntaxes/novelscript.tmLanguage.json"
+        }]
+    },
+    "bugs": {
+        "url": "https://github.com/nobbele/novelscript-vscode/issues",
+        "email": "realnobbele@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nobbele/novelscript-vscode.git"
+    },
+    "homepage": "https://github.com/nobbele/novelscript-vscode/blob/master/README.md"
+}
