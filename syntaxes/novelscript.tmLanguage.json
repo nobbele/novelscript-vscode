@@ -23,7 +23,12 @@
 			}, {
 				"name": "constant.numeric.novelscript",
 				"match": "\\d"
-			}, { "include": "#choices" }]
+			}, { 
+				"include": "#choices" 
+			}, {
+				"name": "keyword.operator",
+				"match": "\\b(load|scene|at)\\b"
+			}]
 		},
 		"operators": {
 			"match": "(=|!=|>|>=|<|<=)",
